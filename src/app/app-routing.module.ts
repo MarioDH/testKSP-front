@@ -12,9 +12,6 @@ import { EmpleadoAgregarComponent } from './components/Empleados/empleadoAgregar
 const routes: Routes = [
   {
     path: 'empleados', component: EmpleadoListaComponent,
-    /*      children: [
-          { path: '/:id', component: Component }
-        ] */
   },
   {
     path: 'empleados/agregar', component: EmpleadoAgregarComponent
@@ -28,7 +25,9 @@ const routes: Routes = [
   {
     path: 'reportes', component: ReportesComponent
   },
-
+  {
+    path: '', component: HomeComponent
+  },
   { path: '**', component: NotfoundComponent },
 ];
 
