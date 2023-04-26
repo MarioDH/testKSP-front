@@ -1,0 +1,59 @@
+<div class="container">
+  <br>
+  <h2 class="pb-2 border-bottom">Empleados</h2>
+  <br>
+  <div class="row">
+    <div class="col-11">
+      <mat-form-field>
+        <mat-label>Buscar</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="nombre, puesto, etc.," #input>
+      </mat-form-field>
+    </div>
+    <div class="col-1">
+        <button  mat-mini-fab color="accent" 
+        #tooltip="matTooltip"
+        matTooltip="Agregar empleado"
+        matTooltipPosition="above"
+        (click)="agregarEmpleado()">   <mat-icon>add</mat-icon> </button>
+    </div>
+
+
+</div>
+
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="Identificador">
+      <mat-header-cell *matHeaderCellDef> Identificador </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.Identificador}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Nombre">
+      <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.Nombre}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Puesto">
+      <mat-header-cell *matHeaderCellDef> Puesto </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.Puesto}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Salario">
+      <mat-header-cell *matHeaderCellDef> Salario </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.Salario}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Estatus">
+      <mat-header-cell *matHeaderCellDef> Estatus </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.Estatus}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="fecha_Contrato">
+      <mat-header-cell *matHeaderCellDef> Fecha de Contrato </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.fecha_Contrato}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectProspecto(row)"></mat-row>
+  </mat-table>
+
+</div>

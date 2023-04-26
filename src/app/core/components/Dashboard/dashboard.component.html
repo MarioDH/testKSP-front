@@ -1,0 +1,66 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Menu" (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>KSP SYSTEM</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon" aria-label="Example">
+    <mat-icon>circle_notifications</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example">
+    <mat-icon>contact_support</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <mat-list>
+      <mat-list-item>
+        <button mat-button color="primary" routerLink="/empleados" routerLinkActive="active">
+          <mat-icon>home</mat-icon> Home </button>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <button mat-button color="primary" routerLink="/empleados" routerLinkActive="active">
+          <mat-icon>account_circle</mat-icon> Empleados</button>
+      </mat-list-item>
+
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <button mat-button color="primary" routerLink="/clientes" routerLinkActive="active">
+          <mat-icon>assignment_ind</mat-icon> Clientes
+        </button>
+      </mat-list-item>
+
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <button mat-button color="primary" routerLink="/reportes" routerLinkActive="active">
+          <mat-icon>article</mat-icon> Reportes
+        </button>
+      </mat-list-item>
+
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <button mat-button color="primary">
+          <mat-icon>account_circle</mat-icon> Configuración
+        </button>
+      </mat-list-item>
+
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <button mat-button color="primary">
+          <mat-icon>contact_support</mat-icon> Ayuda
+        </button>
+      </mat-list-item>
+
+    </mat-list>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <router-outlet></router-outlet>
+  </div>
+
+</mat-drawer-container>

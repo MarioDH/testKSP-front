@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="col"> <mat-icon></mat-icon>
+        <h2 class="pb-2 border-bottom">Agregar empleado</h2>
+    </div>
+    <mat-card>
+        <mat-card-content>
+            <form class="example-form" [formGroup]="testForm">
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Identificador </mat-label>
+                    <input matInput placeholder="" formControlName="Identificador">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Foto </mat-label>
+                    <input matInput placeholder="" formControlName="Foto">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Nombre </mat-label>
+                    <input matInput placeholder="" formControlName="Nombre">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Puesto</mat-label>
+                    <input matInput placeholder=""  formControlName="Puesto">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Salario</mat-label>
+                    <input matInput placeholder="" formControlName="Salario">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Estatus</mat-label>
+                    <input matInput placeholder="" formControlName="Estatus">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Fecha de Contrato</mat-label>
+                    <input matInput placeholder="" formControlName="fecha_Contrato">
+                </mat-form-field>
+                <div class="row">
+                    <div class="col-4">
+                        <button mat-button color="accent" (click)="regresar() "> <mat-icon>arrow_back</mat-icon> Regresar</button>
+                    </div>
+
+                    <div class="col-5">
+                        <button  mat-raised-button color="primary" (click)="guardar()" [disabled]="!testForm.valid">
+                            <span>
+                                Guardar
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        
+        </mat-card-content>
+    </mat-card>
+
+</div>
