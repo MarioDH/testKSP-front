@@ -50,6 +50,8 @@ export class EmpleadoAgregarComponent {
     this._AppService._ClienteServiceService.postEmpleado(objectForm).subscribe({
       next: (data: any) => {
         console.log('postEmpleado', data);
+        this._AppService._notificationService.mensajeNotificacion('', 'El empleado se guardo correctamente ', 'Ok');
+        this.router.navigate(['/empleados']);
       },
       error: () => {
         console.log('mensajeErrorDatos');
